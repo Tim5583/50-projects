@@ -10,6 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 .container {
@@ -17,8 +18,10 @@ body {
     background: url("https://images.unsplash.com/photo-1612173477102-3c9672ef77c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
     background-size: cover;
     background-position: center center;
-    width: 100vw;
-    height: 100vh;
+    top: -30px;
+    left: -30px;
+    right: -30px;
+    bottom: -30px;
     filter: blur(0px);
     z-index: -1;
 }
