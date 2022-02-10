@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+    transition: width 1000ms ease-in-out, height 1000ms ease-in-out;
+}
+
+.split-sub {
+    text-align: center;
+    z-index: 2;
+}
+
+.split .btn {
+    color: inherit;
+    text-decoration: none;
+    border: 4px solid #fff;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.split h1 {
+    font-size: 3.5rem;
+    white-space: nowrap;
+    margin-bottom: 2rem;
+}
+
+.split.right {
+    right: 0;
+    background-image: url("https://vgleaks.com/wp-content/uploads/2020/03/serie-1.jpg");
+}
+
+.split.right::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 43, 43, .8);
+}
+
+.split.right .btn:hover {
+    background-color: rgb(28, 122, 28);
+    border: 4px solid rgb(28, 122, 28);
+}
+
+.split.left {
+    left: 0;
+    background-image: url("https://static.tweaktown.com/news/7/3/73146_46_playstation-5-officially-revealed-vertical_full.png");
+}
+
+.split.left::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(87, 84, 236, 0.7);
+}
+
+.split.left .btn:hover {
+    background-color: rgb(87, 84, 236);
+    border: 4px solid rgb(87, 84, 236);
+}
+
+.hover-left .left {
+    width: 75%;
+}
+
+.hover-left .right {
+    width: 25%;
+}
+
+.hover-right .left {
+    width: 25%;
+}
+
+.hover-right .right {
+    width: 75%;
+}
+
+@media(max-width: 854px) {
+    .split-sub {
+        transform: scale(.7);
+    }
+}
+
+@media(max-width: 596px) {
+    .split {
+        height: 50%;
+        width: 100%;
+    }
+
+    .split.right {
+        bottom: 0; 
+    }
+
+    .hover-left .left {
+        height: 75%;
+        width: 100%
+    }
+    
+    .hover-left .right {
+        height: 25%;
+        width: 100%;
+    }
+    
+    .hover-right .left {
+        height: 25%;
+        width: 100%;
+    }
+    
+    .hover-right .right {
+        height: 75%;
+        width: 100%;
+    }
+}
