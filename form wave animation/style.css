@@ -76,7 +76,7 @@ p a {
     transition: 500ms cubic-bezier(.45,-0.7,.13,1.73);
 }
 
-.form-control input:focus + label span {
+.form-control label.wave span {
     color: lightblue;
     transform: translateY(-25px);
 }
