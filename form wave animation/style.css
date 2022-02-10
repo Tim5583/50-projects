@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #666;
+}
+
+.container {
+    max-width: 375px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem 1rem;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+.form-control {
+    text-align: left;
+    position: relative;
+}
+
+.form-control input{
+    display: block;
+    border: none;
+    border-bottom: 2px solid #fff;
+    width: 100%;
+    margin: 1.5rem 0;
+    padding: .5em 1em;
+    font-size: 1.2rem;
+    background-color: transparent;
+    caret-color: #fff;
+    color: white;
+}
+
+.form-control input:focus {
+    outline: none;
+    border-bottom-color: lightblue;
+}
+
+.form-control label {
+    position: absolute;
+    top: 11px;
+    left: .5em;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: .5em 1em;
+    margin: 1rem 0 .5rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(.98);
+}
+
+p a {
+    color: rgb(226, 132, 89);
+    text-decoration: none;
+}
+
+.form-control label span {
+    display: inline-block;
+    transition: 500ms cubic-bezier(.45,-0.7,.13,1.73);
+}
+
+.form-control input:focus + label span {
+    color: lightblue;
+    transform: translateY(-25px);
+}
