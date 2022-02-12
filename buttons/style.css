@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin: 1rem auto;
+    width: 200px;
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+.label {
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    background-color: rgb(153, 153, 153);
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0 .5rem;
+    position: relative;
+}
+
+.toggle:checked + .label{
+    background-color: blueviolet;
+}
+
+.ball {
+    background-color: white;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+}
+
+.toggle:checked + .label .ball {
+    right: 2px;
+    left: auto;
+}
