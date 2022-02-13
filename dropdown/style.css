@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(218, 210, 199);
+}
+
+.container {
+    margin-top: 2rem;
+}
+
+h1 {
+    margin: 2rem 0;
+}
+
+.faq {
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+    position: relative;
+    width: 800px;
+    overflow: hidden;
+}
+
+.faq.active::after, .faq.active::before {
+    content: "\f075";
+    font-family: "Font Awesome 5 Free";
+    font-size: 7rem;
+    color: greenyellow;
+    opacity: .3;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+
+.faq.active::after {
+    color: blue;
+    top: -40px;
+    left: -30px;
+    transform: rotateY(180deg);
+}
+
+.faq.active {
+    background-color: rgb(226, 215, 199);
+}
+
+.faq-title {
+    margin: .5rem 0;
+}
+
+.faq-text {
+    display: none;
+}
+
+.faq.active .faq-text {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+button .fa-times {
+    display: none;
+}
+
+.faq.active button .fa-times {
+    display: inline-block;
+}
+
+.faq.active button .fa-chevron-down {
+    display: none;
+}
+
+.faq.active button {
+    background-color: rgb(87, 87, 87);
+    color: rgb(226, 215, 199);
+}
+
