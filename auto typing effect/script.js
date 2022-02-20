@@ -1,31 +1,35 @@
-const textEle = document.getElementById("text");
-const btnEle = document.getElementById("speed");
+const animateTextEle = document.getElementById("text");
+const speedControlBtn = document.getElementById("speed");
 const userInputForm = document.querySelector("form");
-const userText = document.getElementById("textinput")
-let insideText = textEle.innerText;
-let speed = btnEle.value * 50;
-
+let animateText = animateTextEle.innerText;
+let animateSpeed = speedControlBtn.value * 50;
+let forword = true
 let idx = 1;
 
-autoType();
 
 function autoType() {
-    textEle.innerText = insideText.slice(0, idx);
-    idx++;
+    animateTextEle.innerText = animateText.slice(0, idx);
 
-    if (idx > insideText.length) {
-        idx = 1
-    }
-    setTimeout(autoType, speed);
+    (forword) ? idx++ : idx--;
+    if (idx > animateText.length && forword) {forword = false;}
+    if (idx <= 0 && !forword) {forword = true;}
+
+    setTimeout(autoType, animateSpeed);
 }
 
-btnEle.addEventListener("input", (e) => {
-    if (btnEle.value > 0 && btnEle.value < 11) {
-        speed = e.target.value * 50;
+
+speedControlBtn.addEventListener("input", (e) => {
+    if (speedControlBtn.value > 0 && speedControlBtn.value < 11) {
+        animateSpeed = e.target.value * 50;
     }
 })
+
 
 userInputForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    insideText = e.target.firstElementChild.value.trim();
+    animateText = e.target.firstElementChild.value.trim();
+    idx = 1;
 })
+
+
+autoType();
