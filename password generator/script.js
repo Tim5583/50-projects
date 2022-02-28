@@ -32,20 +32,39 @@ const randomFunction = {
 }; 
 
 function returnPassword(upper, lower, number, symbol, length) {
-    let opctions = [{upper}, {lower}, {number}, {symbol}].filter(item => {
-        Object.values(item)[0];
-    });
-
-    console.log(opctions)
+    let opctions = [{upper}, {lower}, {number}, {symbol}].filter(item => Object.values(item)[0]).map(item => Object.keys(item)[0]);
+    let password = "";
+    if (opctions.length != 0) {
+        for (let i = 0; i < length; i++) {
+            let randomNum = Math.floor(Math.random() * (opctions.length));
+            password += randomFunction[opctions[randomNum]]();
+        }
+    } else {
+        password = "";
+    }
+    return password;
 }
 
-function generatePassword() {
+function generatePassword() { 
     const length = +lengthEl.value;
     const hasupper = upperEl.checked;
     const haslower = lowerEl.checked;
     const hasnumber = numbreEl.checked;
     const hassymbol =  symbolEl.checked;
-    resultEl.innerHTML =  returnPassword(hasupper, haslower, hasnumber, hassymbol, length);
+    resultEl.innerText =  returnPassword(hasupper, haslower, hasnumber, hassymbol, length);
 }
 
-generatePassword();
+generateBtn.addEventListener("click", generatePassword);
+
+clipboardIcon.addEventListener("click", () => {
+    const textaresEl = document.createElement("textarea");
+    const password = resultEl.innerText;
+
+    if (!password) {return}
+
+    textaresEl.value = password;
+    document.body.append(textaresEl);
+    textaresEl.select();
+    document.execCommand("copy");
+    textaresEl.remove();
+})
