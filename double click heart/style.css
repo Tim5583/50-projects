@@ -1,0 +1,40 @@
+body {
+    text-align: center;
+    background-color: rgb(73, 73, 73);
+    color: #fff;
+}
+
+.fa-heart {
+    color: red;
+}
+
+#likes {
+    margin: 1rem auto;
+}
+
+.image {
+    background: url('https://images.unsplash.com/photo-1612173477102-3c9672ef77c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+    width: 400px;
+    height: 700px;
+    margin: 1rem auto;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #fff;
+}
+
+.image .fa-heart {
+    position: absolute;
+    color: red;
+    transform: translate(-50%, -50%) scale(0);
+    animation: anime 400ms linear;
+    top: 50%;
+    left: 50%;
+}
+
+@keyframes anime {
+    to {
+        transform: translate(-50%, -50%) scale(20);
+        opacity: 0;
+        color: rgb(211, 20, 20);
+    }
+}
