@@ -25,6 +25,7 @@ body {
     top: 0;
     left: 0;
     bottom: 10%;
+    transition: 500ms ease-in;
 }
 
 .content img {
@@ -47,11 +48,15 @@ nav {
     justify-content: space-around;
 }
 
+li i, li p {
+    transition: 500ms ease-in;
+}
+
 li {
     list-style: none;
     text-align: center;
     width: 22%;
-    padding: .5rem 0;
+    padding: .5rem;
     cursor: pointer;
 }
 

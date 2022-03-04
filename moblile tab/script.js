@@ -15,8 +15,12 @@ function removeButtonHighlighter() {
 
 listItems.forEach(item => {
     item.addEventListener("click",(e) => {
-        const clickedIcon = e.target.parentElement;
-        const imageId = clickedIcon.getAttribute("data-target");
+        let clickedIcon = e.target;
+        if (clickedIcon.tagName === "P" || clickedIcon.tagName === "I") {
+            clickedIcon = clickedIcon.parentElement;
+        }
+        console.log(clickedIcon);
+        const imageId = clickedIcon.getAttribute("data-target") || e.target.getAttribute("data-target");
         if (imageId) {
             removeShowClass();
             removeButtonHighlighter();
