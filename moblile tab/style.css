@@ -26,17 +26,17 @@ body {
     left: 0;
     bottom: 10%;
     transition: 500ms ease-in;
+    opacity: 0;
 }
 
 .content img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: none;
 }
 
-.content.show img {
-    display: block;
+.content.show {
+    opacity: 1;
 }
 
 nav {
