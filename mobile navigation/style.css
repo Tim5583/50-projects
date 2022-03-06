@@ -19,6 +19,7 @@ body {
 h1 {
     font-size: 5rem;
 }
+
 p {
     font-size: 1.99rem;
 }
@@ -44,43 +45,44 @@ p {
     transition: transform 500ms ease-out;
 }
 
-.nav.active {
+nav.open .nav {
     transform: translateX(0);
 }
 
 .nav-black {
-    background-color: black;
     width: 370px;
+    background-color: black;
     transition-delay: 600ms;
 }
 
-.nav-black.active {
+nav.open .nav-black {
     transition-delay: 0ms;
 }
 
 .nav-red {
-    background-color: red;
     width: 90%;
+    background-color: red;
+    transition-delay: 300ms;
+}
+
+nav.open .nav-red {
     transition-delay: 300ms;
 }
 
 .nav-white {
-    background-color: #fff;;
+    background-color: #fff;
     width: 90%;
     transition-delay: 0ms;
-    text-align: left;
-    padding: 2rem 1rem;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 2rem 1rem;
 }
 
-.nav-white.active {
+nav.open .nav-white {
     transition-delay: 600ms;
 }
-
 
 .closeBtn {
     position: absolute;
@@ -88,25 +90,26 @@ p {
     right: 10px;
     opacity: .5;
 }
-h2 {
+
+.nav h2 {
     font-size: 2.5rem;
 }
 
-ul {
+.nav ul {
     list-style-type: none;
 }
 
-ul li {
+.nav ul li {
     margin: 2rem auto;
 }
 
-ul a {
+.nav ul a {
     color: Black;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bolder;
 }
 
-ul a:hover {
+.nav ul a:hover {
     color: Red;
 }

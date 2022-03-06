@@ -1,11 +1,11 @@
 const hamburgerIconEl = document.querySelector(".openBtn");
 const closeIconEl = document.querySelector(".closeBtn");
-const navEls = document.querySelectorAll(".nav");
+const navEl = document.querySelector("nav");
 
 hamburgerIconEl.addEventListener("click", () => {
-    navEls.forEach(item => item.classList.add("active"));
+    navEl.classList.add("open");
 });
 
 closeIconEl.addEventListener("click", () => {
-    navEls.forEach(item => item.classList.remove("active"));
+    navEl.classList.remove("open")
 });
