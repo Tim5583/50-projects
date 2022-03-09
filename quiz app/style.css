@@ -19,7 +19,8 @@ body {
     background-color: #907AD6;
     overflow: hidden;
     color: #fff;
-    max-width: 450px;
+    width: 450px;
+    min-height: 300px;
 }
 
 .container h1 {
@@ -54,4 +55,13 @@ body {
     font-size: 1.1rem;
     color: rgb(58, 58, 58);
     cursor: pointer;
+}
+
+.score {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    font-weight: bolder;
 }
