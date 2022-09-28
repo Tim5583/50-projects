@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.counter {
+    text-align: center;
+}
+
+.counter.hide {
+    display: none;
+}
+
+.counter .numbers-div {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.counter span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(150deg);
+    line-height: 50px;
+    font-size: 50px;
+    transform-origin: bottom center;
+}
+
+.counter span.in {
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: numIn 500ms ease-in-out;
+}
+
+.counter span.out {
+    animation: numOut 500ms ease-in-out;
+}
+
+@keyframes numIn {
+    0% {
+        transform: translate(-50%, -50%) rotate(150deg);
+    }
+
+    20% {
+        transform: translate(-50%, -50%) rotate(-30deg);
+    }
+
+    40% {
+        transform: translate(-50%, -50%) rotate(30deg);
+    }
+
+    60% {
+        transform: translate(-50%, -50%) rotate(-20deg);
+    }
+    
+    80% {
+        transform: translate(-50%, -50%) rotate(20deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@keyframes numOut {
+    0% {
+        transform: translate(-50%, -50%) rotate(20deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-150deg);
+    }
+}
+
+.main {
+    display: none;
+    text-align: center;
+}
+
+.main button {
+    padding: .25em 1em;
+    margin-top: .5em;
+}
+
+.main.show {
+    display: block;
+}
